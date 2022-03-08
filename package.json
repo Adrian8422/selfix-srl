@@ -1,0 +1,14 @@
+{
+  "name": "web-picahuala",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.21",
+    "@vaadin/router": "^1.7.4",
+    "parcel": "^2.3.2"
+  }
+}
