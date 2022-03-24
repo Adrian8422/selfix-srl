@@ -23,15 +23,14 @@ class Header extends HTMLElement {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 100%;
       height: 100px;
       background-color: transparent;
       align-items: center;
       padding: 30px 0px;
-      
       position: fixed;
-      background-color:whitesmoke;
+      background-color: whitesmoke;
       height: 50px;
+      width: 1002px;
     }
     .header__logo-home {
       margin: 0 28px 0 13px;

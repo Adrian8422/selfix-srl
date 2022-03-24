@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+.root {
+  width: 1002px;
+  margin: 0 auto;
+}

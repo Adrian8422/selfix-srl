@@ -2,6 +2,8 @@ import { Router } from "@vaadin/router";
 const welcomeImg = require("../assets/sustentabilidad-resicom.jpg");
 const imgGestion = require("../assets/GESTAO-DE-RESIDUOS-580x640.jpg");
 const imgProcesoReciclado = require("../assets/icon-relleno-sanitario.svg");
+const imgCar = require("../assets/car-residuo.png");
+const imgMountain = require("../assets/mountain.png");
 
 class HomePage extends HTMLElement {
   connectedCallback() {
@@ -41,13 +43,14 @@ class HomePage extends HTMLElement {
   @media (min-width: 832px) {
     .welcome-container-img {
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-evenly;
       
     }
   }
   .welcome-img-gestion {
-    width: 36vh;
-    font-size: 48px;
+    width: 203px;
+    font-size: 30px;
+    margin: 0 auto;
   }
   .container-titles{
     display: flex;
@@ -58,14 +61,18 @@ class HomePage extends HTMLElement {
 
   }
   .title-welcome-img{
-    font-size: 55px;
     font-family: 'Montserrat';
     color: black;
     text-align: center;
+    font-weight: 100;
+    font-size: 46px;
+    line-height: 60px;
 
 
 
   }
+    
+ 
   .welcome__title-two {
     font-size: 23px;
     padding: 0 25px 0 27px;
@@ -98,26 +105,37 @@ class HomePage extends HTMLElement {
   }
   
   .presentacion {
-    height: 538px;
+    height: 1076px;
     width: 100%;
-    background-color: #8cff87;
+    background-color: #8dc63f;
   }
   @media (min-width: 1062px) {
     .presentacion {
       display: flex;
       justify-content: center;
-      background-color: #8cff87;
+      background-color: #8dc63f;
       margin-top: 28px;
+      flex-direction:row;
     }
   }
   .container-gestion-full{
     display: flex;
-    padding: 10vh;
+    padding: ;
     flex-direction: column;
+    align-items: center;
+  }
+  @media(min-width: 1062px){
+    .container-gestion-full{
+      flex-direction: row;
+
+    }
   }
   .container-img-gestion{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    max-width: 317px;
+    border-bottom: solid 2px #2e3d2e;
 
   }
   .container-text-mision{
@@ -128,6 +146,7 @@ class HomePage extends HTMLElement {
   }
   .text-mision{
     max-width: 50vh;
+    margin: 0;
   }
   
   .presentacion__container {
@@ -258,8 +277,7 @@ class HomePage extends HTMLElement {
     this.appendChild(style);
   }
   render() {
-    const div = document.createElement("div");
-    div.innerHTML = `
+    this.innerHTML = `
 
  <div class="container-home">
      <header-el></header-el> 
@@ -280,7 +298,19 @@ class HomePage extends HTMLElement {
   <div class="presentacion">
     <div class="container-gestion-full">
          <div class="container-img-gestion">
+            <img class="welcome-img-gestion" src="${imgCar}" />
+            <p class="text-mision">Recolección, tratamiento y disposición final de residuos, bajo el cumplimiento máximo de leyes ambientales</p>
+    
+        </div>
+         <div class="container-img-gestion">
+            <img class="welcome-img-gestion" src="${imgMountain}" />
+            <p class="text-mision">Recolección, tratamiento y disposición final de residuos, bajo el cumplimiento máximo de leyes ambientales</p>
+    
+        </div>
+         <div class="container-img-gestion">
             <img class="welcome-img-gestion" src="${imgProcesoReciclado}" />
+            <p class="text-mision">Recolección, tratamiento y disposición final de residuos, bajo el cumplimiento máximo de leyes ambientales</p>
+    
         </div>
          <div class="container-text-mision">
              <h3 class="title-mision">Nuestra misión</h3>
@@ -336,8 +366,6 @@ class HomePage extends HTMLElement {
     
     
     `;
-
-    this.appendChild(div);
   }
 }
 customElements.define("home-page", HomePage);
